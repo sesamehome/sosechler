@@ -39,7 +39,7 @@ public class HomeActivity extends Activity
             }
         });
     }
-    // Methos to handleClick Event of Sign In Button
+    // Methods to handleClick Event of Sign In Button
     public void signIn(View V)
        {
             final Dialog dialog = new Dialog(HomeActivity.this);
