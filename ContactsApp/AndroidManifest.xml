@@ -24,6 +24,12 @@
  
          <activity
             android:name=".SignUPActivity"/>
+         <activity
+            android:name=".ContactActivity"/>
+         <activity
+            android:name=".ContactSearchActivity"/>
+         <activity
+            android:name=".NewContactActivity"/>
     </application>
 
 </manifest>

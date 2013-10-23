@@ -11,7 +11,7 @@ import android.widget.Toast;
  
 public class HomeActivity extends Activity 
 {
-    Button btnSignIn,btnSignUp;
+    Button btnSignIn,btnSignUp, btnConSearch, btnNewContact;
     LoginDataBaseAdapter loginDataBaseAdapter;
  
     @Override
@@ -27,7 +27,8 @@ public class HomeActivity extends Activity
          // Get The Reference Of Buttons
          btnSignIn=(Button)findViewById(R.id.buttonSignIN);
          btnSignUp=(Button)findViewById(R.id.buttonSignUP);
- 
+         
+         
         // Set OnClick Listener on SignUp button 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
@@ -67,6 +68,7 @@ public class HomeActivity extends Activity
                     if(password.equals(storedPassword))
                     {
                         Toast.makeText(HomeActivity.this, "Congrats: Login Successfull", Toast.LENGTH_LONG).show();
+                        // add new forwarding logic
                         dialog.dismiss();
                     }
                     else
@@ -79,6 +81,8 @@ public class HomeActivity extends Activity
             dialog.show();
     }
  
+
+    
     @Override
     protected void onDestroy() {
         super.onDestroy();
