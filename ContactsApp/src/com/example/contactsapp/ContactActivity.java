@@ -24,35 +24,9 @@ public class ContactActivity extends Activity
  
         // Get Refferences of Views
         btnNewContact=(Button)findViewById(R.id.buttonNewContact);
-        btnContactSearch.setOnClickListener(new View.OnClickListener() {
+       // btnContactSearch.setOnClickListener(new View.OnClickListener() {
  
-        public void onClick(View v) {
-            // TODO Auto-generated method stub
- 
-            String userName=editTextUserName.getText().toString();
-            String password=editTextPassword.getText().toString();
-            String confirmPassword=editTextConfirmPassword.getText().toString();
- 
-            // check if any of the fields are vaccant
-            if(userName.equals("")||password.equals("")||confirmPassword.equals(""))
-            {
-                    Toast.makeText(getApplicationContext(), "Field Vaccant", Toast.LENGTH_LONG).show();
-                    return;
-            }
-            // check if both password matches
-            if(!password.equals(confirmPassword))
-            {
-                Toast.makeText(getApplicationContext(), "Password does not match", Toast.LENGTH_LONG).show();
-                return;
-            }
-            else
-            {
-                // Save the Data in Database
-                loginDataBaseAdapter.insertEntry(userName, password);
-                Toast.makeText(getApplicationContext(), "Account Successfully Created ", Toast.LENGTH_LONG).show();
-            }
-        }
-    });
+       
 }
     @Override
     protected void onDestroy() {
