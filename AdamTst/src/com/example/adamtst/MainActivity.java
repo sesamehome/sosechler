@@ -1,66 +1,111 @@
 package com.example.adamtst;
 
-import android.os.Bundle;
+import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.FilterQueryProvider;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
-public class MainActivity extends Activity implements android.view.View.OnClickListener{
+public class MainActivity extends Activity {
 	
 	private DBHelper dbhelper = new DBHelper(this);
-	private SQLiteDatabase db; // db connector
-	private EditText editText;
-	private Button btn1;
-	private TextView textView2;
+	private EditText inputSearch;
+	private ListView lv;
+	ArrayAdapter<String> adapter;
+	private SimpleCursorAdapter dataAdapter;
 	
-	
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main); 
 		
-		// initialize db connector
-		db = dbhelper.getReadableDatabase();
+		// delete all data -- for testing purposes only (uncomment if needed)
+		//dbhelper.deleteAllCotacts();
 		
-		editText =(EditText)findViewById(R.id.editTxt);
-		btn1 =(Button)findViewById(R.id.btn1);
-		btn1.setOnClickListener(this);
-		textView2 = (TextView)findViewById(R.id.textView2);
+		//create new data -- for testing purposes only (uncomment if needed)
+		//dbhelper.insertContacts();
+		
+		//initListView
+		initListView();
 	}
-
-	public void onClick(View v) {
-		// get the text box
-		String txtstr = editText.getText().toString();
-		String res1 = "";
-		// Search by name
-		Cursor frst = db.rawQuery("SELECT * FROM contactsapp " +
-		             "WHERE first='" + txtstr + "';", null);
-		Cursor lst = db.rawQuery("SELECT * FROM contactsapp " +
-	                 "WHERE last='" + txtstr + "';", null);
-		// get the record
-		if(frst.getCount() !=0){
-			frst.moveToFirst();
-			res1 = frst.getString(0).toString() + " " + frst.getString(1).toString();
-			textView2.setText(res1);
-		}else if(lst.getCount() != 0){
-			lst.moveToFirst();
-			res1 = lst.getString(0).toString() + " " + lst.getString(1).toString();
-			textView2.setText(res1);
-		}else{
-			textView2.setText("No result found");
-		}
+	
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	private void initListView(){
+		//Declarations
+		lv = (ListView) findViewById(R.id.list_view);
+		inputSearch = (EditText) findViewById(R.id.inputSearch);
+	    //String[] columns = new String[] {dbhelper.colID, dbhelper.colFirstName + "|| ' ' ||" + dbhelper.colLastName};  
+		//int[] to = new int[] {R.id.contact_id,R.id.contact_name}; 		
 		
-	}
+		String[] columns = new String[] {dbhelper.colFirstName + "|| ' ' ||" + dbhelper.colLastName};  
+		int[] to = new int[] {R.id.contact_name};
 
+		//List view data
+		Cursor cursor = dbhelper.fetchAllContacts();
+		dataAdapter = new SimpleCursorAdapter(this, R.layout.list_item,cursor,columns,to,0);
+		lv.setAdapter(dataAdapter);
+		 
+         //Enabling Search Filter         
+        inputSearch.addTextChangedListener(new TextWatcher() {
+             
+            @Override
+            public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
+                // When user changed the Text
+                MainActivity.this.dataAdapter.getFilter().filter(cs.toString());
+                 
+            }
+             
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+                    int arg3) {
+                // TODO Auto-generated method stub
+                 
+            }
+             
+            @Override
+            public void afterTextChanged(Editable arg0) {
+                // TODO Auto-generated method stub                         
+            }
+        });
+        
+        //Filter results
+        dataAdapter.setFilterQueryProvider(new FilterQueryProvider() {
+            public Cursor runQuery(CharSequence constraint) {
+                return dbhelper.fetchContactsByName(constraint.toString());
+            }
+        });
+        
+        //Clicking listViewItem 
+        lv.setOnItemClickListener(new OnItemClickListener() { 
+        	   public void onItemClick(AdapterView<?> listView, View view,int position, long id) {
+        	    
+        	   Cursor cursor = (Cursor) listView.getItemAtPosition(position);   
+        	   String contactId =  cursor.getString(cursor.getColumnIndexOrThrow("_id"));
+        	   //Toast.makeText(getApplicationContext(),contactId, Toast.LENGTH_SHORT).show();
+        	   
+        	   //start new intent
+        	   Intent intent = new Intent(MainActivity.this,ViewContacts.class);
+        	   intent.putExtra("contactId", contactId);
+        	   startActivity(intent);
+
+        	 
+        	   }
+        	  }); 
+	} 
+	
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

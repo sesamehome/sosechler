@@ -1,4 +1,29 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+     
+    <!-- Editext for Search -->
+    <EditText android:id="@+id/inputSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search contact names.."
+        android:inputType="textVisiblePassword"/>
+  
+    <!-- List View -->
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textFilterEnabled="true" />
+  
+</LinearLayout>
+
+
+
+<!-- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout"
     android:layout_width="match_parent"
@@ -35,6 +60,8 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/btn1"
         android:layout_marginTop="17dp"
+        android:clickable="true"
+        android:onClick="onClickText"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -46,4 +73,4 @@
        android:layout_alignParentRight="true"
        android:text="Search" />
 
-</RelativeLayout>
+</RelativeLayout>-->
