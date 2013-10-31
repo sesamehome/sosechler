@@ -18,7 +18,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textFilterEnabled="true"
-        android:background="#A9A9A9" />
+        android:background="#FFE4B5" />
   
 </LinearLayout>
 
