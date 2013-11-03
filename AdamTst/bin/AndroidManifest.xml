@@ -26,6 +26,10 @@
             android:name="com.example.adamtst.ViewContacts"
             android:label="@string/title_activity_view_contacts" >
         </activity>
+        <activity
+            android:name="com.example.adamtst.AddContact"
+            android:label="@string/activity_add_contact" >
+        </activity>
     </application>
 
 </manifest>

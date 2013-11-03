@@ -130,6 +130,20 @@ public class DBHelper extends SQLiteOpenHelper{
 		  createContacts(db,"G", "7Tester", "444 Big Dr Pittsburgh PA", "303889301","","","adam@whatever.com", "","");
 		 
 		 }
+	 
+	 public void insertContact(String firstN, String lastN, String address, String homeP, 
+			                   String cellP, String officeP, String email, String diagnosis, String notes) {
+		  SQLiteDatabase db =  this.getWritableDatabase();
+		 try{
+		  createContacts(db, firstN  , lastN  ,  address, homeP , cellP , 
+		                   officeP, email, diagnosis, notes);
+
+		 }catch(Exception e){
+			 System.out.println(e.toString());
+		 }
+		 
+		 }
+
 
 	
 }

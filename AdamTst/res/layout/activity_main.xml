@@ -12,13 +12,17 @@
         android:inputType="textVisiblePassword"/>
   
     <!-- List View -->
+ <Button
+        android:id="@+id/btn_add_contact"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_btn_add_contacts" />
 
     <ListView
         android:id="@+id/list_view"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textFilterEnabled="true"
-        android:background="#FFE4B5" />
+        android:textFilterEnabled="true"/>
   
 </LinearLayout>
 

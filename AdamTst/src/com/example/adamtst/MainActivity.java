@@ -10,9 +10,11 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FilterQueryProvider;
 import android.widget.ListView;
@@ -31,13 +33,22 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
-		
-		// delete all data -- for testing purposes only (uncomment if needed)
-		//dbhelper.deleteAllCotacts();
-		
-		//create new data -- for testing purposes only (uncomment if needed)
-		//dbhelper.insertContacts();
-		
+		 OnClickListener addContactClickListener = new OnClickListener() {
+			 
+	            @Override
+	            public void onClick(View v) {
+	                // Creating an intent to open Android's Contacts List
+	                Intent addcontact = new Intent(MainActivity.this, AddContact.class);
+	 
+	                // Starting the activity
+	                startActivity(addcontact);
+	            }
+	        };
+	        
+	     // Setting click listener for the "Add Contact" button
+	        Button btnAddContact = (Button) findViewById(R.id.btn_add_contact);
+	        
+	        btnAddContact.setOnClickListener(addContactClickListener);
 		//initListView
 		initListView();
 	}
@@ -65,7 +76,6 @@ public class MainActivity extends Activity {
             public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
                 // When user changed the Text
                 MainActivity.this.dataAdapter.getFilter().filter(cs.toString());
-                 
             }
              
             @Override
@@ -77,7 +87,8 @@ public class MainActivity extends Activity {
              
             @Override
             public void afterTextChanged(Editable arg0) {
-                // TODO Auto-generated method stub                         
+                // TODO Auto-generated method stub  
+            	System.out.print(arg0);
             }
         });
         
@@ -104,6 +115,8 @@ public class MainActivity extends Activity {
         	 
         	   }
         	  }); 
+        
+        
 	} 
 	
 	
