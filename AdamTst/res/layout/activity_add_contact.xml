@@ -23,7 +23,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_address"
-        android:inputType="text" />
+        android:inputType="textMultiLine"  
+         android:lines="2"   />
 
     <EditText
         android:id="@+id/et__home_phone"
@@ -58,14 +59,16 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_diagnosis"
-        android:inputType="text" />
+        android:inputType="textMultiLine"  
+        android:lines="3"  />
 
     <EditText
         android:id="@+id/et__notes"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_notes"
-        android:inputType="text" />
+        android:inputType="textMultiLine"  
+        android:lines="5"  />
 
         <Button
         android:id="@+id/btn_add_contact"
@@ -73,10 +76,10 @@
         android:layout_height="wrap_content"
         android:text="@string/str_btn_add_contacts" />
         
-        <Button
+<!-- <Button
         android:id="@+id/list_view"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title_activity_view_contacts" />
+        android:text="@string/title_activity_view_contacts" /> -->        
     
 </LinearLayout>
