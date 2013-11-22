@@ -16,4 +16,9 @@
     <string name="add_diagnosis" >Diagnosis</string>
     <string name="add_notes" >Notes</string>
     <string name="str_btn_add_contacts" >Add Contact</string>
+    <string-array name="phone_array">
+        <item>Home Phone</item>
+        <item>Cell Phone</item>
+        <item>Office Phone</item>
+    </string-array>
 </resources>

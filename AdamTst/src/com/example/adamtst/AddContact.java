@@ -11,15 +11,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class AddContact extends Activity {
 	
 	private DBHelper dbhelper = new DBHelper(this);
 	private EditText etFirstName, etLastName, etAddress, etHomePhone, etCellPhone, etOfficePhone, etEmail, etDiagnosis, etNotes;
-	
+	Spinner spnPhone;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -42,12 +44,13 @@ public class AddContact extends Activity {
       	 etFirstName = (EditText) findViewById(R.id.et__first_name);
 		 etLastName = (EditText) findViewById(R.id.et__last_name);
 		 etAddress = (EditText) findViewById(R.id.et__address);
-		 etHomePhone = (EditText) findViewById(R.id.et__home_phone);
-		 etCellPhone = (EditText) findViewById(R.id.et__cell_phone);
-		 etOfficePhone = (EditText) findViewById(R.id.et__office_phone);
+		 //etHomePhone = (EditText) findViewById(R.id.et__home_phone);
+		 //etCellPhone = (EditText) findViewById(R.id.et__cell_phone);
+		 //etOfficePhone = (EditText) findViewById(R.id.et__office_phone);
 		 etEmail = (EditText) findViewById(R.id.et__email);
 		 etDiagnosis = (EditText) findViewById(R.id.et__diagnosis);
 		 etNotes = (EditText) findViewById(R.id.et__notes);
+		 spnPhone = (Spinner) findViewById(R.id.spn_phone_spinner);
 	}
 	
 	public void addPatientListenerOnButton() {
@@ -60,6 +63,13 @@ public class AddContact extends Activity {
             }
         });		
 		 
+	}
+	
+	public void phoneTypesListenerOnSpinner() {
+		 
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.phone_array, android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) ;
+		spnPhone.setAdapter(adapter);
 	}
 	
 	
