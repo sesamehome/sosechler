@@ -9,6 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_first_name"
+        android:lines="1"
         android:inputType="text" />
 
     <EditText
@@ -16,6 +17,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_last_name"
+        android:lines="1"
         android:inputType="text" />
 
     <EditText
@@ -35,6 +37,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_home_phone"
+        android:lines="1"
         android:inputType="text" />
 
     <EditText
@@ -42,6 +45,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_cell_phone"
+        android:lines="1"
         android:inputType="text" />
 
     <EditText
@@ -49,6 +53,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_office_phone"
+        android:lines="1"
         android:inputType="text" />
 
     <EditText
@@ -56,6 +61,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_email"
+        android:lines="1"
         android:inputType="text" />
 
     <EditText
@@ -64,7 +70,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/add_diagnosis"
         android:inputType="textMultiLine"
-        android:lines="3"
+        android:lines="2"
         android:scrollbars="vertical" />
 
     <EditText
@@ -73,7 +79,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/add_notes"
         android:inputType="textMultiLine"
-        android:lines="5"
+        android:lines="3"
         android:scrollbars="vertical" />
 
         <Button
