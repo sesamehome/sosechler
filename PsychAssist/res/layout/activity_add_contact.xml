@@ -19,19 +19,22 @@
         android:hint="@string/add_last_name"
         android:lines="1"
         android:inputType="text" />
-
+<!-- 
     <EditText
         android:id="@+id/et__address"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_address"
-        android:inputType="textMultiLine"  
-         android:lines="2"   />
-<!-- <Spinner 
+        android:inputType="textMultiLine"
+        android:lines="2"
+        android:scrollbars="vertical" />
+
+      <Spinner 
         android:id="@+id/et_phone_spinner"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
  -->
+
     <EditText
         android:id="@+id/et__home_phone"
         android:layout_width="fill_parent"
@@ -55,7 +58,7 @@
         android:hint="@string/add_office_phone"
         android:lines="1"
         android:inputType="text" />
-
+<!--  
     <EditText
         android:id="@+id/et__email"
         android:layout_width="fill_parent"
@@ -63,14 +66,14 @@
         android:hint="@string/add_email"
         android:lines="1"
         android:inputType="text" />
-
+-->
     <EditText
         android:id="@+id/et__diagnosis"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_diagnosis"
         android:inputType="textMultiLine"
-        android:lines="2"
+        android:lines="4"
         android:scrollbars="vertical" />
 
     <EditText
@@ -79,7 +82,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/add_notes"
         android:inputType="textMultiLine"
-        android:lines="3"
+        android:lines="7"
         android:scrollbars="vertical" />
 
         <Button

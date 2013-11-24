@@ -41,11 +41,11 @@ public class AddContact extends Activity {
 	public void initPageObjects(){
       	 etFirstName = (EditText) findViewById(R.id.et__first_name);
 		 etLastName = (EditText) findViewById(R.id.et__last_name);
-		 etAddress = (EditText) findViewById(R.id.et__address);
+		 //etAddress = (EditText) findViewById(R.id.et__address);
 		 etHomePhone = (EditText) findViewById(R.id.et__home_phone);
 		 etCellPhone = (EditText) findViewById(R.id.et__cell_phone);
 		 etOfficePhone = (EditText) findViewById(R.id.et__office_phone);
-		 etEmail = (EditText) findViewById(R.id.et__email);
+		 //etEmail = (EditText) findViewById(R.id.et__email);
 		 etDiagnosis = (EditText) findViewById(R.id.et__diagnosis);
 		 etNotes = (EditText) findViewById(R.id.et__notes);
 		 //etPhoneSpn = (EditText) findViewById(R.id.et_phone_spinner);
