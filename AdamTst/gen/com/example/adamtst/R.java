@@ -8,6 +8,9 @@
 package com.example.adamtst;
 
 public final class R {
+    public static final class array {
+        public static final int phone_array=0x7f060000;
+    }
     public static final class attr {
     }
     public static final class dimen {
@@ -32,73 +35,71 @@ public final class R {
         public static final int ic_launcher=0x7f020008;
     }
     public static final class id {
-        public static final int Address=0x7f080037;
-        public static final int Diagnosis=0x7f080038;
-        public static final int DoneButton=0x7f08001e;
-        public static final int Email=0x7f080033;
-        public static final int HomePhone=0x7f08002c;
-        public static final int MedicalDoneButton=0x7f080025;
-        public static final int MedicalRevertButton=0x7f080026;
-        public static final int MobilePhone=0x7f080029;
-        public static final int Notes=0x7f080039;
-        public static final int OfficePhone=0x7f08002f;
-        public static final int Phone=0x7f080027;
-        public static final int RevertButton=0x7f08001f;
-        public static final int TextAddress=0x7f080035;
-        public static final int TextDiagnosis=0x7f080021;
-        public static final int TextEmail=0x7f080031;
-        public static final int TextHome=0x7f08002d;
-        public static final int TextMobile=0x7f08002a;
-        public static final int TextNotes=0x7f080023;
-        public static final int TextOfc=0x7f080030;
-        public static final int Type=0x7f08003c;
-        public static final int Value=0x7f08003b;
-        public static final int action_add=0x7f080040;
-        public static final int action_delete=0x7f080042;
-        public static final int action_edit=0x7f080041;
-        public static final int action_save=0x7f08003e;
-        public static final int action_settings=0x7f08003f;
-        public static final int action_undo=0x7f08003d;
-        public static final int btn_add_contact=0x7f080009;
-        public static final int contact_name=0x7f08003a;
-        public static final int editAddress=0x7f08001d;
-        public static final int editDiagnosis=0x7f080022;
-        public static final int editEmail=0x7f080019;
-        public static final int editFirstName=0x7f08000d;
-        public static final int editHomePhone=0x7f080013;
-        public static final int editLastName=0x7f08000e;
-        public static final int editMedicalName=0x7f080020;
-        public static final int editMobilePhone=0x7f080011;
-        public static final int editNotes=0x7f080024;
-        public static final int editOfficePhone=0x7f080015;
-        public static final int editPhone=0x7f08000f;
-        public static final int editTextAddress=0x7f08001b;
-        public static final int editTextEmail=0x7f080017;
-        public static final int editTextHome=0x7f080014;
-        public static final int editTextMobile=0x7f080012;
-        public static final int editTextOfc=0x7f080016;
-        public static final int editViewAddress=0x7f08001c;
-        public static final int editViewEmail=0x7f080018;
-        public static final int editViewEmail2=0x7f08001a;
-        public static final int editViewPhone=0x7f080010;
-        public static final int et__address=0x7f080002;
-        public static final int et__cell_phone=0x7f080004;
-        public static final int et__diagnosis=0x7f080007;
-        public static final int et__email=0x7f080006;
-        public static final int et__first_name=0x7f080000;
-        public static final int et__home_phone=0x7f080003;
-        public static final int et__last_name=0x7f080001;
-        public static final int et__notes=0x7f080008;
-        public static final int et__office_phone=0x7f080005;
-        public static final int inputSearch=0x7f08000a;
-        public static final int list_view=0x7f08000b;
-        public static final int pager=0x7f08000c;
-        public static final int viewAddress=0x7f080036;
-        public static final int viewEmail=0x7f080032;
-        public static final int viewEmail2=0x7f080034;
-        public static final int viewHomePhone=0x7f08002e;
-        public static final int viewMobile=0x7f08002b;
-        public static final int viewPhone=0x7f080028;
+        public static final int Address=0x7f090035;
+        public static final int Diagnosis=0x7f090036;
+        public static final int DoneButton=0x7f09001c;
+        public static final int Email=0x7f090031;
+        public static final int HomePhone=0x7f09002a;
+        public static final int MedicalDoneButton=0x7f090023;
+        public static final int MedicalRevertButton=0x7f090024;
+        public static final int MobilePhone=0x7f090027;
+        public static final int Notes=0x7f090037;
+        public static final int OfficePhone=0x7f09002d;
+        public static final int Phone=0x7f090025;
+        public static final int RevertButton=0x7f09001d;
+        public static final int TextAddress=0x7f090033;
+        public static final int TextDiagnosis=0x7f09001f;
+        public static final int TextEmail=0x7f09002f;
+        public static final int TextHome=0x7f09002b;
+        public static final int TextMobile=0x7f090028;
+        public static final int TextNotes=0x7f090021;
+        public static final int TextOfc=0x7f09002e;
+        public static final int Type=0x7f09003a;
+        public static final int Value=0x7f090039;
+        public static final int action_add=0x7f09003e;
+        public static final int action_delete=0x7f090040;
+        public static final int action_edit=0x7f09003f;
+        public static final int action_save=0x7f09003c;
+        public static final int action_settings=0x7f09003d;
+        public static final int action_undo=0x7f09003b;
+        public static final int btn_add_contact=0x7f090007;
+        public static final int contact_name=0x7f090038;
+        public static final int editAddress=0x7f09001b;
+        public static final int editDiagnosis=0x7f090020;
+        public static final int editEmail=0x7f090017;
+        public static final int editFirstName=0x7f09000b;
+        public static final int editHomePhone=0x7f090011;
+        public static final int editLastName=0x7f09000c;
+        public static final int editMedicalName=0x7f09001e;
+        public static final int editMobilePhone=0x7f09000f;
+        public static final int editNotes=0x7f090022;
+        public static final int editOfficePhone=0x7f090013;
+        public static final int editPhone=0x7f09000d;
+        public static final int editTextAddress=0x7f090019;
+        public static final int editTextEmail=0x7f090015;
+        public static final int editTextHome=0x7f090012;
+        public static final int editTextMobile=0x7f090010;
+        public static final int editTextOfc=0x7f090014;
+        public static final int editViewAddress=0x7f09001a;
+        public static final int editViewEmail=0x7f090016;
+        public static final int editViewEmail2=0x7f090018;
+        public static final int editViewPhone=0x7f09000e;
+        public static final int et__address=0x7f090002;
+        public static final int et__diagnosis=0x7f090005;
+        public static final int et__email=0x7f090004;
+        public static final int et__first_name=0x7f090000;
+        public static final int et__last_name=0x7f090001;
+        public static final int et__notes=0x7f090006;
+        public static final int inputSearch=0x7f090008;
+        public static final int list_view=0x7f090009;
+        public static final int pager=0x7f09000a;
+        public static final int spn_phone_spinner=0x7f090003;
+        public static final int viewAddress=0x7f090034;
+        public static final int viewEmail=0x7f090030;
+        public static final int viewEmail2=0x7f090032;
+        public static final int viewHomePhone=0x7f09002c;
+        public static final int viewMobile=0x7f090029;
+        public static final int viewPhone=0x7f090026;
     }
     public static final class layout {
         public static final int activity_add_contact=0x7f030000;
@@ -112,11 +113,11 @@ public final class R {
         public static final int list_phones=0x7f030008;
     }
     public static final class menu {
-        public static final int add_contacts=0x7f070000;
-        public static final int edit_contact_info=0x7f070001;
-        public static final int edit_diagnosis=0x7f070002;
-        public static final int main=0x7f070003;
-        public static final int view_contacts=0x7f070004;
+        public static final int add_contacts=0x7f080000;
+        public static final int edit_contact_info=0x7f080001;
+        public static final int edit_diagnosis=0x7f080002;
+        public static final int main=0x7f080003;
+        public static final int view_contacts=0x7f080004;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
@@ -159,10 +160,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
     }
 }
