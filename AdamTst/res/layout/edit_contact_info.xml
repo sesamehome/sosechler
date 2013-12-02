@@ -1,0 +1,194 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+              android:layout_marginBottom="15dp">
+
+        <EditText
+            android:id="@+id/editFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="FirstName"
+            android:textAppearance="?android:attr/textAppearanceSmallInverse" />
+
+        <EditText
+            android:id="@+id/editLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="LastName"
+            android:textAppearance="?android:attr/textAppearanceSmallInverse" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/editPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_marginStart="15dp"
+        android:text="PHONE"
+        android:textColor="@android:color/holo_blue_bright" />
+
+    <View
+        android:id="@+id/editViewPhone"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_blue_bright" />
+
+   <LinearLayout
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content" 
+       android:orientation="horizontal" >
+ 
+    <EditText
+        android:id="@+id/editMobilePhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"  
+        android:hint="Add a mobile number"
+        android:inputType="phone"
+        android:textAppearance="?android:attr/textAppearanceSmallInverse" />
+
+    <TextView
+        android:id="@+id/editTextMobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="(Mobile)" />
+
+    </LinearLayout> 
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="right"  > 
+       <EditText
+        android:id="@+id/editHomePhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:hint="Add a home number"
+        android:inputType="phone"
+        android:textAppearance="?android:attr/textAppearanceSmallInverse" />
+  <TextView
+        android:id="@+id/editTextHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="(Home)" />       
+
+
+</LinearLayout> 
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="right"  > 
+
+        
+    <EditText
+        android:id="@+id/editOfficePhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Add an office number"
+        android:textAppearance="?android:attr/textAppearanceSmallInverse" />
+
+        <TextView
+        android:id="@+id/editTextOfc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="(Office)" />
+
+</LinearLayout>
+    <TextView
+        android:id="@+id/editTextEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:text="EMAIL"
+        android:textColor="@android:color/holo_blue_bright" />
+
+    <View
+        android:id="@+id/editViewEmail"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_blue_bright" />
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:hint="Add an email"
+        android:inputType="textEmailAddress"
+        android:textAppearance="?android:attr/textAppearanceSmallInverse" />
+
+    <View
+        android:id="@+id/editViewEmail2"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_blue_bright" />
+
+    <TextView
+        android:id="@+id/editTextAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:text="ADDRESS"
+        android:textColor="@android:color/holo_blue_bright" />
+
+    <View
+        android:id="@+id/editViewAddress"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_blue_bright" />
+
+    <EditText
+        android:id="@+id/editAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:hint="Add an address"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" >
+
+        <Button
+            android:id="@+id/DoneButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Done" >
+        </Button>
+
+        <Button
+            android:id="@+id/RevertButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Revert All" >
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

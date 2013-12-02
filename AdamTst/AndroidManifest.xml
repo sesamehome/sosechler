@@ -5,9 +5,12 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="14"
         android:targetSdkVersion="18" />
-
+    
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -24,22 +27,32 @@
         </activity>
         <activity
             android:name="com.example.adamtst.ViewContacts"
-            android:label="@string/title_activity_view_contacts"  
-           android:parentActivityName="com.example.adamtst.MainActivity" >
-        <!-- Parent activity meta-data to support 4.0 and lower -->
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.adamtst.MainActivity" />
-            
+            android:label="@string/title_activity_view_contacts"
+            android:parentActivityName="com.example.adamtst.MainActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.adamtst.MainActivity" />
         </activity>
         <activity
             android:name="com.example.adamtst.AddContact"
-            android:label="@string/activity_add_contact"           
+            android:label="@string/activity_add_contact"
             android:parentActivityName="com.example.adamtst.MainActivity" >
-        <!-- Parent activity meta-data to support 4.0 and lower -->
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.adamtst.MainActivity" /> 
-        </activity> 
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.adamtst.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.adamtst.EditContactInfoActivity"
+            android:label="@string/title_activity_edit_contact_info" >
+        </activity>
+        <activity
+            android:name="com.example.adamtst.EditDiagnosis"
+            android:label="@string/title_activity_edit_diagnosis" >
+        </activity>
     </application>
+
 </manifest>

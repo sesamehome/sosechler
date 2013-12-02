@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:orientation="vertical"
+    android:showDividers="middle" >
+
+    <TextView
+        android:id="@+id/Phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="2dp"
+        android:text="PHONE"
+        android:textColor="@android:color/holo_blue_bright" />
+
+    <View
+        android:id="@+id/viewPhone"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_blue_bright" />
+
+    <TextView
+        android:id="@+id/MobilePhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="Add a mobileNumber" />
+
+    <TextView
+        android:id="@+id/TextMobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:text=" (Mobile)" />
+
+    <View
+        android:id="@+id/viewMobile"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/HomePhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="HomeNumber" />
+
+    <TextView
+        android:id="@+id/TextHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:text=" (Home)" />
+
+    <View
+        android:id="@+id/viewHomePhone"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/OfficePhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="Office Number" />
+
+    <TextView
+        android:id="@+id/TextOfc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text=" (Office)" />
+
+    <TextView
+        android:id="@+id/TextEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:text="EMAIL"
+        android:textColor="@android:color/holo_blue_bright" />
+
+    <View
+        android:id="@+id/viewEmail"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_blue_bright" />
+
+    <TextView
+        android:id="@+id/Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="Email" />
+
+    <View
+        android:id="@+id/viewEmail2"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_blue_bright" />
+
+    <TextView
+        android:id="@+id/TextAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:text="ADDRESS"
+        android:textColor="@android:color/holo_blue_bright" />
+
+    <View
+        android:id="@+id/viewAddress"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_blue_bright" />
+
+    <TextView
+        android:id="@+id/Address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="Address" />
+
+ 
+
+</LinearLayout>

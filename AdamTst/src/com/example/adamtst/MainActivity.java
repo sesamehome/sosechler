@@ -28,12 +28,11 @@ public class MainActivity extends Activity {
 	private ListView lv;
 	ArrayAdapter<String> adapter;
 	private SimpleCursorAdapter dataAdapter;
-
+    private Cursor cursor;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main); 
-		Toast.makeText(getApplicationContext(), "Called after back", Toast.LENGTH_SHORT).show();	
+		setContentView(R.layout.activity_main);		
 		initListView();
 	}
 
@@ -52,13 +51,12 @@ public class MainActivity extends Activity {
 		int[] to = new int[] {R.id.contact_name};
 
 		//List view data
-		Cursor cursor = dbhelper.fetchAllContacts();
+		cursor = dbhelper.fetchAllContacts();
 		dataAdapter = new SimpleCursorAdapter(this, R.layout.list_item,cursor,columns,to,0);
 		lv.setAdapter(dataAdapter);
 
 		//Enabling Search Filter         
 		inputSearch.addTextChangedListener(new TextWatcher() {
-
 			@Override
 			public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
 				// When user changed the Text
@@ -134,25 +132,13 @@ public class MainActivity extends Activity {
 	    super.onResume();
 	  
 	}	
+	
+	protected void onStop() {
+	    super.onStop();  // Always call the superclass method first
+        //cursor.close();  
+         
+	}
 
-	/*code from previous version*/
 
-	//	 OnClickListener addContactClickListener = new OnClickListener() {
-	//		 
-	//           @Override
-	//           public void onClick(View v) {
-	//               // Creating an intent to open Android's Contacts List
-	//               Intent addcontact = new Intent(MainActivity.this, AddContact.class);
-	//
-	//               // Starting the activity
-	//               startActivity(addcontact);
-	//           }
-	//       };
-	//       
-	//    // Setting click listener for the "Add Contact" button
-	//       Button btnAddContact = (Button) findViewById(R.id.btn_add_contact);
-	//       
-	//       btnAddContact.setOnClickListener(addContactClickListener);
-	//initListView
 
 }

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <LinearLayout
+       xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        android:showDividers="middle" >
+        <TextView
+            android:id="@+id/TextDiagnosis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="DIAGNOSIS"
+            android:textColor="@android:color/holo_blue_bright" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@android:color/holo_blue_bright" />
+                
+          <TextView
+            android:id="@+id/Diagnosis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="Diagnosis" />
+
+        <TextView
+            android:id="@+id/TextNotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="NOTES"
+            android:textColor="@android:color/holo_blue_bright" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@android:color/holo_blue_bright" />
+
+        <TextView
+            android:id="@+id/Notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="Notes" />
+
+</LinearLayout>

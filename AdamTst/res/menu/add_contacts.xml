@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
    <item android:id="@+id/action_undo"
-          android:icon="@drawable/light_content_undo"
+          android:icon="@drawable/holodark_content_undo"
           android:title="Undo"
           android:showAsAction="always" />  
            
    <item android:id="@+id/action_save"
-          android:icon="@drawable/light_content_save"
+          android:icon="@drawable/holodark_content_save"
           android:title="Save"
           android:showAsAction="always" />    
 

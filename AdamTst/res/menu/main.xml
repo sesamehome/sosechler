@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
    <item android:id="@+id/action_add"
-          android:icon="@drawable/light_social_add_person"
+          android:icon="@drawable/holodark_social_add_person"
           android:title="test"
           android:showAsAction="always" />    
 

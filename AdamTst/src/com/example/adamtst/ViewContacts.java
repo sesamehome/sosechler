@@ -2,104 +2,127 @@ package com.example.adamtst;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
-import android.app.Activity;
+import android.app.ActionBar.Tab;
+import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.telephony.PhoneNumberUtils;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
 
-public class ViewContacts extends Activity {
-	private TextView homePhone;
-	private TextView mobilePhone;
-	private TextView ofcPhone;
-	private TextView email;
-	private TextView address;
-	private TextView diagnosis;
-	private TextView notes;
-    private String contactId;
-	
+public class ViewContacts extends FragmentActivity implements
+		ActionBar.TabListener {
+	// Tabs vars
+	private String[] tabs = { "Contact", "Diagnosis" };
+	private ViewPager viewPager;
+	private TabsPagerAdapter mAdapter;
+	private ActionBar actionBar;
+
+	// Activity vars
 	private DBHelper dbhelper = new DBHelper(this);
-	
+	public String contactId;
+
 	@Override
 	@SuppressLint("NewApi")
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_view_contact);
 
-		// enable the home button
-	    ActionBar actionBar = getActionBar();
-        actionBar.setHomeButtonEnabled(true);
-		
-		
-		//List view data
-		Cursor cursor = dbhelper.fetchContactsById(getIntent().getStringExtra("contactId"));
+		// set Intent Data
 		contactId = getIntent().getStringExtra("contactId");
-		
-			
-		actionBar.setTitle(cursor.getString(1)); 
-		
-		homePhone = (TextView) findViewById(R.id.HomePhone);		
-		homePhone.setText(formatPhone(cursor.getString(3)));
-		
-		mobilePhone = (TextView) findViewById(R.id.MobilePhone);
-		mobilePhone.setText(formatPhone(cursor.getString(4)));
-		
-		ofcPhone = (TextView) findViewById(R.id.OfficePhone);
-		ofcPhone.setText(formatPhone(cursor.getString(5))); 
-		
-		email = (TextView) findViewById(R.id.Email);
-		email.setText(cursor.getString(6));
 
-		address = (TextView) findViewById(R.id.Address);
-		address.setText(cursor.getString(2));
-		
-		diagnosis = (TextView) findViewById(R.id.Diagnosis);
-		diagnosis.setText(cursor.getString(7));
-		
-		notes = (TextView) findViewById(R.id.Notes);
-		notes.setText(cursor.getString(8));
+		// enable the home button
+		actionBar = getActionBar();
+		actionBar.setHomeButtonEnabled(true);
+		initTabs(actionBar);
 
+		/**
+		 * on swiping the view pager make respective tab selected
+		 * */
+		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
-		
-		
+			@Override
+			public void onPageSelected(int position) {
+				actionBar.setSelectedNavigationItem(position);
+			}
+
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+			}
+
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+			}
+		});
+
 	}
-	
-	private String formatPhone(String phoneNo){
-		return PhoneNumberUtils.formatNumber(phoneNo); 
+
+	private void initTabs(ActionBar actionBar) {
+
+		viewPager = (ViewPager) findViewById(R.id.pager);
+		mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
+		viewPager.setAdapter(mAdapter);
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+		// Adding Tabs
+		for (String tab_name : tabs) {
+			actionBar.addTab(actionBar.newTab().setText(tab_name)
+					.setTabListener(this));
+		}
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.view_contacts, menu);
+	public boolean onCreateOptionsMenu(Menu menu) { 
+		getMenuInflater().inflate(R.menu.view_contacts, menu); 
 		return true;
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-	    // Handle presses on the action bar items
-	    switch (item.getItemId()) {
-	        case R.id.action_edit:  
-	            return true; 
-	        case R.id.action_delete:
-	        	deleteContact(contactId);
-	        	//finish();
-	        	onBackPressed();
-	        	return true;
-	        default:
-	            return super.onOptionsItemSelected(item);
-	    }
+	public boolean onOptionsItemSelected(MenuItem item) { 
+		switch (item.getItemId()) {
+		case R.id.action_edit:
+	
+			if(viewPager.getCurrentItem() == 0){
+				Intent intent = new Intent(ViewContacts.this,EditContactInfoActivity.class);
+				intent.putExtra("contactId", contactId);
+				startActivity(intent);						
+			} else {
+				Intent intent = new Intent(ViewContacts.this,EditDiagnosis.class);
+				intent.putExtra("contactId", contactId);
+				startActivity(intent);
+			}
+			return true;
+		case R.id.action_delete:
+			deleteContact(contactId);
+			finish(); 
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 	private void deleteContact(String contactId) {
-		
 		dbhelper.deleteContact(contactId);
-		Toast.makeText(getApplicationContext(), "Contact Successfully deleted", Toast.LENGTH_SHORT).show();		
-		
-	}	
-	
+	}
+
+	protected void onStop() {
+		super.onStop();
+	}
+
+	@Override
+	public void onTabReselected(Tab tab, FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		viewPager.setCurrentItem(tab.getPosition());
+	}
+
+	@Override
+	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+	}
+
 }

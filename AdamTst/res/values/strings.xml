@@ -6,14 +6,17 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_view_contacts">View Contacts</string>
     <string name="activity_add_contact">All Contacts</string>
-    <string name="add_first_name" >First Name</string>
-    <string name="add_last_name" >Last Name</string>
-    <string name="add_address" >Address</string>
-    <string name="add_home_phone" >Home Phone</string>
-    <string name="add_cell_phone" >Cell Phone</string>
-    <string name="add_office_phone" >Office Phone</string>
-    <string name="add_email" >Email</string>
-    <string name="add_diagnosis" >Diagnosis</string>
-    <string name="add_notes" >Notes</string>
-    <string name="str_btn_add_contacts" >Add Contact</string>
+    <string name="add_first_name">First Name</string>
+    <string name="add_last_name">Last Name</string>
+    <string name="add_address">Address</string>
+    <string name="add_home_phone">Home Phone</string>
+    <string name="add_cell_phone">Cell Phone</string>
+    <string name="add_office_phone">Office Phone</string>
+    <string name="add_email">Email</string>
+    <string name="add_diagnosis">Diagnosis</string>
+    <string name="add_notes">Notes</string>
+    <string name="str_btn_add_contacts">Add Contact</string>
+    <string name="title_activity_edit_contact_info">Edit Contact Info</string>
+    <string name="title_activity_edit_diagnosis">Edit Diagnosis</string>
+
 </resources>

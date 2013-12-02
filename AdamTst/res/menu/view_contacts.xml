@@ -1,19 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-   <item android:id="@+id/action_edit"
-          android:icon="@drawable/light_content_edit"
-          android:title="Edit"
-          android:showAsAction="always" />
-   
-   <item android:id="@+id/action_delete"
-          android:icon="@drawable/light_content_discard"
-          android:title="Delete"
-          android:showAsAction="always" />
-    
-    
+    <item
+        android:id="@+id/action_edit"
+        android:icon="@drawable/holodark_content_edit"
+        android:showAsAction="always"
+        android:title="Edit"/>
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@drawable/holodark_content_discard"
+        android:showAsAction="always"
+        android:title="Delete"/>
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_settings"/>
-
 </menu>

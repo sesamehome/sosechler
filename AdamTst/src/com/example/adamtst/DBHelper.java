@@ -49,7 +49,8 @@ public class DBHelper extends SQLiteOpenHelper{
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL(DATABASE_CREATE);  
+		db.execSQL(DATABASE_CREATE);
+		
 	}
 
 
@@ -63,6 +64,7 @@ public class DBHelper extends SQLiteOpenHelper{
 		if (mCursor != null) {
 			mCursor.moveToFirst();
 		}
+		db.close();
 		return mCursor;
 	}
 
@@ -83,6 +85,7 @@ public class DBHelper extends SQLiteOpenHelper{
 		if (mCursor != null) {
 			mCursor.moveToFirst();
 		}
+		db.close();
 		return mCursor;
 
 	}
@@ -96,29 +99,74 @@ public class DBHelper extends SQLiteOpenHelper{
 					colID + " ='" + id + "'" , null, null, null, colLastName);
 		
 		if (mCursor != null) {
+			Log.d("MyActivity", "mCursor is not null");
 			mCursor.moveToFirst();
 		}
-		return mCursor;		
-		
+		db.close();
+		return mCursor;		 
 	}
+	
+	public Cursor fetchEditContactsById(String id){
+		SQLiteDatabase db =  this.getReadableDatabase();
+		Cursor mCursor = null;
+		mCursor = db.query(contactsTable, new String[] {colID,
+					colFirstName,colLastName,colCellPhone,colHomePhone,
+					colOfcPhone,colEmail,colAddress,},
+					colID + " ='" + id + "'" , null, null, null, null);
+		
+		if (mCursor != null) {
+			Log.d("MyActivity", "mCursor is not null");
+			mCursor.moveToFirst();
+		}
+		db.close();
+		return mCursor;		 
+	}
+	
 
-
+	public Cursor fetchDiagnosisById(String id){
+		SQLiteDatabase db =  this.getReadableDatabase();
+		Cursor mCursor = null;
+		mCursor = db.query(contactsTable, new String[] {colID,colFirstName+ "|| ' ' ||"+ colLastName,colDiagnosis,colNotes},
+					colID + " ='" + id + "'" , null, null, null, null);
+		
+		if (mCursor != null) {
+			Log.d("MyActivity", "mCursor is not null");
+			mCursor.moveToFirst();
+		}
+		db.close();
+		return mCursor;		 
+	}
+	
+	public Cursor fetchEditDiagnosisById(String id){
+		SQLiteDatabase db =  this.getReadableDatabase();
+		Cursor mCursor = null;
+		mCursor = db.query(contactsTable, new String[] {colID,colFirstName,colLastName,colDiagnosis,colNotes},
+					colID + " ='" + id + "'" , null, null, null, null);
+		
+		if (mCursor != null) {
+			Log.d("MyActivity", "mCursor is not null");
+			mCursor.moveToFirst();
+		}
+		db.close();
+		return mCursor;		 
+	}
+	
 	public boolean deleteAllContacts() {
 
 		int doneDelete = 0;
 		SQLiteDatabase db =  this.getWritableDatabase();
 		doneDelete = db.delete(contactsTable, null , null);
+		db.close();
 		return doneDelete > 0;
 
 	}
 	
 	public boolean deleteContact(String contactId){
 		SQLiteDatabase db =  this.getWritableDatabase();
-		return db.delete(contactsTable, colID + "='" + contactId + "'", null) > 0;
-		
-		 
+		boolean result = db.delete(contactsTable, colID + "='" + contactId + "'", null) > 0;
+		db.close();
+		return result;
 	}
-
 	public long createContacts(SQLiteDatabase db,String firstName, String lastName, String address, String homePhone,String cellPhone, String ofcPhone,
 			String email,String diagnosis, String notes) {
 
@@ -134,19 +182,9 @@ public class DBHelper extends SQLiteOpenHelper{
 		initialValues.put(colDiagnosis, diagnosis);
 		initialValues.put(colNotes, notes);
 
-		return db.insert(contactsTable, null, initialValues);
-	}
-
-	public void insertContacts() {
-		SQLiteDatabase db =  this.getWritableDatabase();
-		createContacts(db,"A", "1Tester", "444 Big Dr Pittsburgh PA", "303889301","","","adam@whatever.com", "","");
-		createContacts(db,"B", "2Tester", "444 Big Dr Pittsburgh PA", "303889301","","","adam@whatever.com", "","");
-		createContacts(db,"C", "3Tester", "444 Big Dr Pittsburgh PA", "303889301","","","adam@whatever.com", "","");
-		createContacts(db,"D", "4Tester", "444 Big Dr Pittsburgh PA", "303889301","","","adam@whatever.com", "","");
-		createContacts(db,"E", "5Tester", "444 Big Dr Pittsburgh PA", "303889301","","","adam@whatever.com", "","");
-		createContacts(db,"F", "6Tester", "444 Big Dr Pittsburgh PA", "303889301","","","adam@whatever.com", "","");
-		createContacts(db,"G", "7Tester", "444 Big Dr Pittsburgh PA", "303889301","","","adam@whatever.com", "","");
-
+		long result = db.insert(contactsTable, null, initialValues);
+		db.close();
+		return result;
 	}
 
 	public void insertContact(String firstN, String lastN, String address, String homeP, 
@@ -160,6 +198,33 @@ public class DBHelper extends SQLiteOpenHelper{
 			System.out.println(e.toString());
 		}
 
+	}
+	
+	public int updateContact(String contactId,String firstName, String lastName,String cellPhone,String homePhone,String ofcPhone,
+			String email,String address){
+		SQLiteDatabase db =  this.getWritableDatabase();
+		ContentValues args = new ContentValues();
+		args.put(colFirstName, firstName);
+		args.put(colLastName, lastName);
+		args.put(colCellPhone, cellPhone);
+		args.put(colHomePhone, homePhone);
+		args.put(colOfcPhone, ofcPhone);
+		args.put(colEmail, email);
+		
+		args.put(colAddress, address);
+		int i = db.update(contactsTable, args, colID + "=" + contactId, null);
+		db.close();
+		return i;
+	}
+	
+	public int updateDiagnosis(String contactId,String notes, String diagnosis){
+		SQLiteDatabase db =  this.getWritableDatabase();
+		ContentValues args = new ContentValues();
+		args.put(colNotes, notes);
+		args.put(colDiagnosis, diagnosis);
+		int i = db.update(contactsTable, args, colID + "=" + contactId, null);
+		db.close();
+		return i;
 	}
 
 
