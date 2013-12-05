@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Contacts</string>
+    <string name="app_name">PsychAssist</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_view_contacts">View Contacts</string>
-    <string name="activity_add_contact">All Contacts</string>
+    <string name="activity_add_contact">Add Contacts</string>
     <string name="add_first_name">First Name</string>
     <string name="add_last_name">Last Name</string>
     <string name="add_address">Address</string>
@@ -15,11 +15,13 @@
     <string name="add_diagnosis">Diagnosis</string>
     <string name="add_notes">Notes</string>
     <string name="str_btn_add_contacts">Add Contact</string>
+     <!-- 
         <string-array name="phone_array">
         <item>Home Phone</item>
         <item>Cell Phone</item>
         <item>Office Phone</item>
     </string-array>
+     -->
     <string name="title_activity_edit_contact_info">Edit Contact Info</string>
     <string name="title_activity_edit_diagnosis">Edit Diagnosis</string>
 

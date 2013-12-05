@@ -24,19 +24,21 @@
         android:layout_height="wrap_content"
         android:hint="@string/add_last_name"
         android:inputType="text" />
-
+  
     <EditText
         android:id="@+id/et__address"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/add_address"
         android:inputType="textMultiLine"  
-         android:lines="2"   />
-
+         android:lines="1"   />
+         
+<!-- 
  <Spinner 
         android:id="@+id/spn_phone_spinner"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
+         -->
 
     <EditText
         android:id="@+id/et__home_phone"
@@ -65,6 +67,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/add_email"
         android:inputType="text" />
+     
 
     <EditText
         android:id="@+id/et__diagnosis"
@@ -72,7 +75,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/add_diagnosis"
         android:inputType="textMultiLine"  
-        android:lines="3"  />
+        android:lines="2"  />
 
     <EditText
         android:id="@+id/et__notes"
@@ -80,7 +83,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/add_notes"
         android:inputType="textMultiLine"  
-        android:lines="5"  />
+        android:lines="4"  />
 
         <Button
         android:id="@+id/btn_add_contact"

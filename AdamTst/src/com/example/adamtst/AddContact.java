@@ -67,9 +67,9 @@ public class AddContact extends Activity {
 	
 	public void phoneTypesListenerOnSpinner() {
 		 
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.phone_array, android.R.layout.simple_spinner_item);
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) ;
-		spnPhone.setAdapter(adapter);
+		//ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.phone_array, android.R.layout.simple_spinner_item);
+		//adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) ;
+		//spnPhone.setAdapter(adapter);
 	}
 	
 	
@@ -120,7 +120,8 @@ public class AddContact extends Activity {
         		dbhelper.insertContact(etFirstName.getText().toString(), etLastName.getText().toString(), etAddress.getText().toString(), 
 						   etHomePhone.getText().toString(), etCellPhone.getText().toString(), etOfficePhone.getText().toString(), 
 						   etEmail.getText().toString(), etDiagnosis.getText().toString(), etNotes.getText().toString());
-        		Toast.makeText(getApplicationContext(), "Contact Successfully Saved", Toast.LENGTH_SHORT).show();		
+        		Toast.makeText(getApplicationContext(), "Contact Successfully Saved", Toast.LENGTH_SHORT).show();
+        		clearFields();
 
             }catch(Exception e){
             	System.out.println("Insert exception: " + e);
