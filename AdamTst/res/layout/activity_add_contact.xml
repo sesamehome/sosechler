@@ -37,7 +37,7 @@
         android:id="@+id/spn_phone_spinner"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
-    <!--
+
     <EditText
         android:id="@+id/et__home_phone"
         android:layout_width="fill_parent"
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/add_office_phone"
         android:inputType="text" />
- -->
+
     <EditText
         android:id="@+id/et__email"
         android:layout_width="fill_parent"
