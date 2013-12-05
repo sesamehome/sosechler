@@ -44,13 +44,13 @@ public class AddContact extends Activity {
       	 etFirstName = (EditText) findViewById(R.id.et__first_name);
 		 etLastName = (EditText) findViewById(R.id.et__last_name);
 		 etAddress = (EditText) findViewById(R.id.et__address);
-		 //etHomePhone = (EditText) findViewById(R.id.et__home_phone);
-		 //etCellPhone = (EditText) findViewById(R.id.et__cell_phone);
-		 //etOfficePhone = (EditText) findViewById(R.id.et__office_phone);
+		 etHomePhone = (EditText) findViewById(R.id.et__home_phone);
+		 etCellPhone = (EditText) findViewById(R.id.et__cell_phone);
+		 etOfficePhone = (EditText) findViewById(R.id.et__office_phone);
 		 etEmail = (EditText) findViewById(R.id.et__email);
 		 etDiagnosis = (EditText) findViewById(R.id.et__diagnosis);
 		 etNotes = (EditText) findViewById(R.id.et__notes);
-		 spnPhone = (Spinner) findViewById(R.id.spn_phone_spinner);
+		 //spnPhone = (Spinner) findViewById(R.id.spn_phone_spinner);
 	}
 	
 	public void addPatientListenerOnButton() {
